@@ -5,22 +5,47 @@ import {Login} from "src/views/login/Login";
 
 describe('Login view', () => {
 
-    describe('Renders the form', () => {
-        it('Username field', () => {
+    describe('renders the form', () => {
+        it('username field', async () => {
+            expect.assertions(1);
+            const { findByLabelText } = render(
+                withMemoryRouter(<Login/>)
+            );
+
+            const usernameField = await findByLabelText('Username textfield', {selector: '.MuiTextField-root'});
+            expect(usernameField).toBeInTheDocument();
+        });
+
+        it('password field', async () => {
+            expect.assertions(1);
+            const { findByLabelText } = render(
+                withMemoryRouter(<Login/>)
+            );
+
+            const usernameField = await findByLabelText('Password textfield', {selector: '.MuiTextField-root'});
+            expect(usernameField).toBeInTheDocument();
+        });
+    });
+
+    describe('registration', function () {
+        it('renders the link', async () => {
+            expect.assertions(1);
             const { findByRole } = render(
                 withMemoryRouter(<Login/>)
             );
 
-            const usernameField = findByRole('TextField', {id: 'username-field'});
-            expect(usernameField).toBeInTheDocument(); //
+            const linkElement = await findByRole('link', {name: 'Register for free'});
+            expect(linkElement).toBeInTheDocument();
         });
-    });
 
-    it('renders the username', () => {
-        const {getByText} = render(
-            withMemoryRouter(<Login/>)
-        );
-        const linkElement = getByText(/Start for free/i);
-        expect(linkElement).toBeInTheDocument();
+        it('points to /register', async () => {
+            expect.assertions(1);
+            const { findByRole } = render(
+                withMemoryRouter(<Login/>)
+            );
+
+            const linkElement = await findByRole('link', {name: 'Register for free'});
+            expect(linkElement).toHaveAttribute('href', '/register');
+        });
     });
 });
