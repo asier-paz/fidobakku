@@ -12,7 +12,7 @@ describe('Login view', () => {
             );
 
             const usernameField = findByRole('TextField', {id: 'username-field'});
-            expect(usernameField).toBeInTheDocument();
+            expect(usernameField).toBeInTheDocument(); //
         });
     });
 
