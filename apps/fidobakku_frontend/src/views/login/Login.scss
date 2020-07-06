@@ -1,0 +1,72 @@
+@import "../../styles/breakpoints";
+@import "../../styles/mixins";
+
+#root {
+  display: flex;
+  flex-direction: column;
+
+  background: #1A3341;
+  padding: 50px;
+}
+
+.login-view {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .logo {
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+    color: #ffffff;
+
+    span {
+      color: #ffa500;
+
+      &:after {
+        content: '!';
+        display: inline-block;
+
+        @include transform(rotate3d(0, 0, 1, 6deg));
+      }
+    }
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+
+    .MuiTextField-root {
+      margin-bottom: 25px;
+
+      .MuiInputBase-root {
+        .MuiInputAdornment-root {
+          .material-icons {
+            color: #555555;
+          }
+        }
+      }
+    }
+  }
+  
+  .register {
+    margin-top: 25px;
+    color: #dddddd;
+    
+    a {
+      color: inherit;
+      text-decoration: underline;
+
+      @include transition(color 280ms);
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+}

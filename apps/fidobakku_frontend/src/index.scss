@@ -1,0 +1,44 @@
+@import "./styles/breakpoints";
+
+html { height: 100%; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+#root {
+  flex: 1 1 0;
+}
+
+.white-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 15px;
+  border: 1px solid #f6f6f6;
+  width: 100%;
+
+  -webkit-box-shadow: 4px 4px 8px -4px rgba(0,0,0,0.45);
+  -moz-box-shadow: 4px 4px 8px -4px rgba(0,0,0,0.45);
+  box-shadow: 4px 4px 8px -4px rgba(0,0,0,0.45);
+
+  @include respond-to('gt-xs') {
+    max-width: 480px;
+  }
+
+  @include respond-to('gt-md') {
+    max-width: 580px;
+    padding: 30px 40px;
+  }
+
+  &.no-padding {
+    padding: 0;
+  }
+
+  h1 {
+    margin-top: 0;
+  }
+}
