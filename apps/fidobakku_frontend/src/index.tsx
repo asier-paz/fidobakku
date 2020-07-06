@@ -5,21 +5,17 @@ import {
     Route,
     Switch
 } from 'react-router-dom';
-import './index.scss';
-import * as serviceWorker from './serviceWorker';
-import {Login} from './views/login/Login';
-import {Register} from "./views/register/Register";
+import 'src/index.scss';
+import * as serviceWorker from 'src/serviceWorker';
+import {Login} from 'src/views/login/Login';
+import {Register} from "src/views/register/Register";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
         <Switch>
-            <Route path="/login" exact>
-                <Login />
-            </Route>
-            <Route path="/register" exact>
-                <Register />
-            </Route>
+            <Route path="/login" exact component={ Login } />
+            <Route path="/register" exact component={ Register } />
         </Switch>
     </Router>
   </React.StrictMode>,

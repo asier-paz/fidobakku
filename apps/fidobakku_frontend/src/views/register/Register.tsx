@@ -1,5 +1,5 @@
 import * as React from "react";
-import './Register.scss';
+import 'src/views/register/Register.scss';
 
 interface RegisterProps {
 }

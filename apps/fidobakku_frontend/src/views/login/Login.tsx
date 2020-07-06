@@ -2,7 +2,7 @@ import * as React from "react";
 import {TextField} from "@material-ui/core";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Icon from "@material-ui/core/Icon";
-import './Login.scss';
+import 'src/views/login/Login.scss';
 import Button from "@material-ui/core/Button";
 import {Link} from "react-router-dom";
 
@@ -16,14 +16,14 @@ export const Login: React.FC<LoginProps> = () => {
                 <h1>Login</h1>
 
                 <form className="login-form">
-                    <TextField label="User" variant="outlined" required InputProps={{
+                    <TextField id="username-field" label="User" variant="outlined" required InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">
                                 <Icon>account_circle</Icon>
                             </InputAdornment>
                         )
                     }} placeholder="e.g. jake-the-dog@fun-adventures.com" />
-                    <TextField label="Password" variant="outlined" type="password" required InputProps={{
+                    <TextField id="password-field" label="Password" variant="outlined" type="password" required InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">
                                 <Icon>vpn_key</Icon>
